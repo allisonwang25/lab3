@@ -4,9 +4,11 @@ public class ArrayExamples {
 
   // Changes the input array to be in reversed order
   static void reverseInPlace(int[] arr) {
+    int tempHold = arr[0];
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
+    arr[arr.length-1] = tempHold;
   }
 
   // Returns a *new* array with all the elements of the input array in reversed
@@ -30,8 +32,9 @@ public class ArrayExamples {
     }
     double sum = 0;
     for(double num: arr) {
-      if(num != lowest) { sum += num; }
+      sum += num;
     }
+    sum -= lowest;
     return sum / (arr.length - 1);
   }
 
